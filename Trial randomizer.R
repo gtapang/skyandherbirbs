@@ -1,6 +1,7 @@
 path = "~/SOUNDFILES/00JelSound-1/CSLIB"
-percent_number = 200
+percent_number = 50
 pattern = "wav$|WAV$"
+results_folder = "~/SOUNDFILES/Additional3 selected WAV files"
 
 random_files <- function(path, percent_number, results_folder = "/", pattern = "wav$|WAV$"){
   ####################################################################
@@ -34,7 +35,7 @@ random_files <- function(path, percent_number, results_folder = "/", pattern = "
   dir.create(results_folder, recursive=TRUE)
   
   # Write csv with file names
-  write.table(names2analyse, file = paste0(results_folder, "/selected_files.csv"),
+  write.table(names2analyse, file = paste0(results_folder, "selected_files.csv"),
               col.names = "Files", row.names = FALSE)
   
   # Move files
@@ -43,5 +44,3 @@ random_files <- function(path, percent_number, results_folder = "/", pattern = "
   }
 }
 random_files(path, percent_number, results_folder, pattern)
-
-# Retain 05 to 1854

@@ -4,6 +4,9 @@
 currentdirectory = ("~/SOUNDFILES/00JelSound-1/PreProcessed")
 setwd(currentdirectory)
 
+currentdirectory = ("~/SOUNDFILES/00JelSound-1/PreProcessed2")
+setwd(currentdirectory)
+
 # Install packages
 install.packages("soundecology")
 install.packages("seewave")
@@ -134,6 +137,9 @@ ar_results = AR(getwd(), datatype = "files")
 write.csv(ar_results, 
           file = "~/SOUNDFILES/00JelSound-1/PreProcessed/ar_results.csv")
 
+write.csv(ar_results, 
+          file = "~/SOUNDFILES/00JelSound-1/PreProcessed2/ar_results.csv")
+
 # Remove duplicates based on AR column
 ar_resultsxdupes = ar_results %>% distinct(AR,.keep_all = TRUE)
 
@@ -179,10 +185,11 @@ write.csv(AIanalysis,
           file = "~/SOUNDFILES/00JelSound-1/PreProcessed/AIanalysis.csv")
 
 
-Sanalysis = read.csv("Sanalysis.csv")
-Sanalysis
 
 ### Statistical Analysis: Spearman's rank correlation coefficient 
+
+Sanalysis = read.csv("Sanalysis.csv")
+Sanalysis
 
 ## Is the number of species heard significantly correlated with AI values?
 ## Null = not significant
